@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.myuidemo.base">
+
+    <uses-sdk
+        android:minSdkVersion="13"
+        android:targetSdkVersion="19"/>
+    <!-- 定义一个权限 -->
+    <permission
+        android:name="scott.permission.MY_BROADCAST_PERMISSION"
+        android:protectionLevel="normal"/>
+    <permission
+        android:name="lmr.permission.MY_CONTENT_PROVIDER"
+        android:protectionLevel="normal"/>
+    <!-- 使用该权限,具体使用见componentLayout.BroadcastActivity中的orderedBroadcast()方法 -->
+    <uses-permission android:name="scott.permission.MY_BROADCAST_PERMISSION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 读取联系人 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- 写入联系人 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <!-- 读取短消息 -->
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <!-- 发送短消息 -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <!-- 写入短消息 -->
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="lmr.permission.MY_CONTENT_PROVIDER"/>
+    <!-- 安卓网络访问 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+        <activity android:name=".SplashActivity"> <!-- - 默认启动模式为standard,不管有没有已存在的实例，都生成新的实例,并放于栈顶 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GridViewActivity"
+            android:launchMode="singleTop">
+
+            <!-- singleTop启动模式，如果发现有对应的Activity实例正位于栈顶，则重复利用，不再生成新的实例 -->
+        </activity>
+        <activity
+            android:name="com.myuidemo.componentLayout.LifeCycleActivity"
+            android:configChanges="orientation"
+            android:launchMode="singleInstance">
+
+            <!-- 启动模式比较特殊，因为它会启用一个新的栈结构，将Acitvity放置于这个新的栈结构中，并保证不再有其他Activity实例进入 -->
+            <!-- 竖屏:android:screenOrientation="portrait"，或者在onCreate方法中指定：setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);  //竖屏 -->
+            <!-- 横屏：android:screenOrientation="landscape"，或者在onCreate方法中，setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); //横屏 -->
+            <!-- 为了避免这样销毁重建的过程，我们需要在AndroidMainfest.xml中对OrientationActivity对应的<activity>配置android:configChanges="orientation",并且在activity中重写public void onConfigurationChanged(Configuration newConfig)方法 -->
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask">
+
+            <!-- singleTask模式，如果发现有对应的Activity实例，则使此Activity实例之上的其他Activity实例统统出栈，使此Activity实例成为栈顶对象，显示到幕前 -->
+        </activity>
+        <activity android:name="com.myuidemo.componentLayout.ServiceActivity">
+        </activity>
+        <activity android:name="com.myuidemo.componentLayout.Service2Activity">
+        </activity>
+        <activity android:name="com.myuidemo.componentLayout.BroadcastActivity">
+        </activity>
+        <activity android:name="com.myuidemo.componentLayout.ContentProviderActivity">
+        </activity>
+
+        <service
+            android:name="com.myuidemo.componentLayout.MyService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MyService"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter> <!-- 如果服务只是在本应用中使用，大可以去掉<intent-filter>属性 -->
+        </service>
+        <service android:name="com.myuidemo.componentLayout.ProCallService">
+        </service>
+
+        <receiver android:name="com.myuidemo.componentLayout.FirstReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.MY_BROADCAST"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.myuidemo.componentLayout.SecondReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.MY_BROADCAST"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.myuidemo.componentLayout.ThirdReceiver">
+            <intent-filter android:priority="998">
+                <action android:name="android.intent.action.MY_BROADCAST"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.myuidemo.componentLayout.MyContentProvider"
+            android:authorities="com.lmr.PersonProvider"
+            android:multiprocess="true"
+            android:permission="lmr.permission.MY_CONTENT_PROVIDER">
+        </provider>
+
+        <activity android:name="com.myuidemo.componentLayout.TestMyProviderActivity">
+
+            <!-- MIME类型 -->
+            <intent-filter>
+                <data android:mimeType="vnd.android.cursor.dir/vnd.lmr.person"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:mimeType="vnd.android.cursor.item/vnd.lmr.person"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.myuidemo.fiveLayout.LayoutActivity">
+        </activity>
+        <activity android:name="com.myuidemo.fiveLayout.subLayoutActivity">
+        </activity>
+        <activity android:name="com.myuidemo.friendUI.OptionMenuActivity">
+        </activity>
+        <activity android:name="com.myuidemo.friendUI.ContextMenuActivity">
+        </activity>
+        <activity android:name="com.myuidemo.friendUI.SubMenuActivity">
+        </activity>
+        <activity android:name="com.myuidemo.friendUI.ToastActivity">
+        </activity>
+        <activity android:name="com.myuidemo.friendUI.DialogActivity">
+        </activity>
+        <activity android:name="com.myuidemo.friendUI.NotificationActivity">
+        </activity>
+        <activity android:name=".HttpActivity">
+        </activity>
+        <activity android:name="com.myuidemo.seniorUI.FrameActivity">
+        </activity>
+        <activity android:name="com.myuidemo.seniorUI.RotateActivity">
+        </activity>
+        <activity android:name="com.myuidemo.seniorUI.AlphaActivity">
+        </activity>
+        <activity android:name="com.myuidemo.seniorUI.TranslateActivity">
+        </activity>
+        <activity android:name="com.myuidemo.seniorUI.ScaleActivity">
+        </activity>
+        <activity android:name="com.myuidemo.seniorUI.AnimationActivity">
+        </activity>
+        <activity android:name="com.myuidemo.seniorUI.PropertyAnimActivity">
+        </activity>
+        <activity android:name="com.myuidemo.seniorUI.LayoutAnimActivity">
+        </activity>
+    </application>
+
+</manifest>

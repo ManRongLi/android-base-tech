@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.myuidemo.fiveLayout.subLayoutActivity">
+    <!--android:layout_toLeftOf         该组件位于引用组件的左方
+ android:layout_toRightOf        该组件位于引用组件的右方
+ android:layout_above            该组件位于引用组件的上方
+ android:layout_below                该组件位于引用组件的下方
+ android:layout_alignParentLeft      该组件是否对齐父组件的左端
+ android:layout_alignParentRight     该组件是否齐其父组件的右端
+ android:layout_alignParentTop       该组件是否对齐父组件的顶部
+ android:layout_alignParentBottom    该组件是否对齐父组件的底部
+ android:layout_centerInParent       该组件是否相对于父组件居中
+ android:layout_centerHorizontal     该组件是否横向居中
+ android:layout_centerVertical       该组件是否垂直居中
+-->
+    <Button android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:text="Button1"/>
+    <Button android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/btn1"
+            android:layout_above="@id/btn1"
+            android:text="Button2"/>
+    <Button android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btn2"
+            android:layout_above="@id/btn2"
+            android:text="Button3"/>
+    <Button android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btn3"
+            android:layout_below="@id/btn3"
+            android:text="Button4"/>
+
+</RelativeLayout>

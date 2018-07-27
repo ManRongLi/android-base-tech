@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_base"
+        android:layout_width="84dp"
+        android:layout_height="43dp"
+        android:text="BaseUI"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="0dp"/>
+
+    <Button
+        android:id="@+id/btn_activity"
+        android:layout_width="97dp"
+        android:layout_height="40dp"
+        android:text="Activity"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="67dp"/>
+
+    <Button
+        android:id="@+id/btn_service"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:text="Service"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="67dp"/>
+
+    <Button
+        android:id="@+id/btn_broadcast"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="BroadcastReceiver"
+        tools:layout_editor_absoluteX="196dp"
+        tools:layout_editor_absoluteY="67dp"/>
+
+    <Button
+        android:id="@+id/btn_contprovider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ContentProvider"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="0dp"/>
+    <Button
+        android:id="@+id/btn_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TableLayout"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="0dp"/>
+    <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FriendUI"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="0dp"/>
+    <Button
+        android:id="@+id/btn_http"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android网络访问"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="0dp"/>
+    <Button
+        android:id="@+id/btn_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animation"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="0dp"/>
+
+</LinearLayout>

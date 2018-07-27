@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <item android:id="@+id/Hello"
+           android:title="hello">
+        <menu>
+           <item android:id="@+id/Hi"
+                android:title="hi">
+           </item>
+           <item android:id="@+id/Cancel"
+                android:title="cancel">
+            </item>
+        </menu>
+        </item>
+
+    </menu>

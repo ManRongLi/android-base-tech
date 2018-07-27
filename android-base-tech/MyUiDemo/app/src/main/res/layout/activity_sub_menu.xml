@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE1FF"
+    android:orientation="vertical"
+    tools:context="com.myuidemo.friendUI.SubMenuActivity">
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/ic_launcher_round"
+        android:cacheColorHint="#000000ff"
+        android:divider="@null"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="40dp"
+        android:fastScrollEnabled="true"
+        android:listSelector="@android:drawable/button_onoff_indicator_on"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        android:choiceMode="multipleChoice"
+        >
+    </ListView>
+
+</LinearLayout>

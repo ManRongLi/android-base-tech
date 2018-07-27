@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.myuidemo.friendUI.OptionMenuActivity">
+    <Button
+        android:id="@+id/sub_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="SubMenu_ListView"
+  />
+    <Button
+        android:id="@+id/con_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="ContextMenu"
+        />
+    <Button
+        android:id="@+id/toast"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Toast"
+        />
+    <Button
+        android:id="@+id/alert_dialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="AlertDialog"
+        />
+    <Button
+        android:id="@+id/notification"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        />
+    <Button
+        android:id="@+id/popupWindow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="PopUpWindow"
+        />
+</LinearLayout>

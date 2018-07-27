@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:padding="5dip" android:gravity="center">
+    <Button android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:id="@+id/moreForOne"
+            android:text="启动多次通知只显示一条"></Button>
+    <Button android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:text="启动多次通知显示多条，但只能用最新的通知跳转到活动"
+            android:id="@+id/moreForLast"></Button>
+    <Button android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:id="@+id/moreForEvery"
+            android:text="启动多次通知显示多条，每一条通知都能跳转到对应的活动"></Button>
+    <Button android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:text="自定义布局的通知"
+            android:id="@+id/myCustomNoti"></Button>
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:shrinkColumns="0,1,2"
+    android:stretchColumns="0,1,2"
+    tools:context="com.myuidemo.fiveLayout.subLayoutActivity">
+    <!--shrinkColumns设置三列都可以收缩-->
+    <!--stretchColumns 设置三列都可以拉伸 如果不设置这个，那个显示的表格将不能填慢整个屏幕-->
+    <TableRow android:layout_height="wrap_content"
+              android:layout_width="fill_parent">
+        <Button android:gravity="center" android:padding="10dp"   android:text="Button1" />
+        <Button android:gravity="center" android:padding="10dp"   android:text="Button2" />
+        <Button android:gravity="center" android:padding="10dp"   android:text="Button3" />
+    </TableRow>
+    <TableRow android:layout_height="wrap_content"
+              android:layout_width="fill_parent">
+        <Button android:gravity="center" android:padding="10dp"   android:text="Button4" />
+        <Button android:gravity="center" android:padding="10dp"   android:text="Button5" />
+    </TableRow>
+    <TableRow android:layout_height="wrap_content"
+              android:layout_width="fill_parent">
+        <Button android:gravity="center" android:padding="10dp"   android:text="Button6" />
+        <Button android:gravity="center" android:padding="10dp"   android:text="Button7" />
+        <Button android:gravity="center" android:padding="10dp"   android:text="Button8" />
+    </TableRow>
+
+</TableLayout>

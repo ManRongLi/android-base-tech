@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:padding="5dip" android:gravity="center">
+    <Button android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:id="@+id/alertWithButton"
+            android:text="增加按钮"></Button>
+    <Button android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:text="增加列表"
+            android:id="@+id/alertWithList"></Button>
+    <Button android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:id="@+id/alertWithChoicebox"
+            android:text="增加单选框和复选框 "></Button>
+    <Button android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:text="进度条对话框"
+            android:id="@+id/progressDlg"></Button>
+    <Button android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:text="自定义对话框"
+            android:id="@+id/myCustomDlg"></Button>
+
+</LinearLayout>

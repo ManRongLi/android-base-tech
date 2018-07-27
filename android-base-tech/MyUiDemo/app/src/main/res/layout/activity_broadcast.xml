@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.myuidemo.componentLayout.BroadcastActivity"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="动态注册-普通广播  "/>
+
+    <Button
+        android:id="@+id/ordered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="静态注册-有序广播"/>
+    <Button
+        android:id="@+id/local"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="动态注册-本地广播"/>
+
+</LinearLayout>
